@@ -1,0 +1,10 @@
+flask
+transformers
+torch
+feedparser
+yfinance
+pandas
+requests
+numpy
+ta
+scikit-learn
