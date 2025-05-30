@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>سیگنال طلا</title>
+    <style>
+        body { font-family: Tahoma, sans-serif; direction: rtl; padding: 20px; }
+        .news { margin-top: 20px; }
+        .news-item { border-bottom: 1px solid #ccc; padding: 10px 0; }
+        .signal { font-weight: bold; font-size: 20px; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <h1>قیمت طلا: {{ gold_price }} دلار</h1>
+    <h2>قیمت دلار: {{ dollar_price }} تومان</h2>
+    <div class="signal">سیگنال: {{ signal }}</div>
+    <div class="news">
+        <h3>اخبار و تحلیل احساسات</h3>
+        {% for item in news %}
+        <div class="news-item">
+            <a href="{{ item.link }}" target="_blank">{{ item.title }}</a><br>
+            احساسات: {{ item.sentiment }} (اعتماد: {{ item.confidence }})
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
